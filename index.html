@@ -51,76 +51,31 @@
 
   <script>
     const quizData = [
-      {
-        question: "Welche Zeitform ist das? 'Ich werde essen.'",
-        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
-        correct: "Futur I"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Ich habe gegessen.'",
-        answers: ["Perfekt", "Präteritum", "Präsens", "Futur I"],
-        correct: "Perfekt"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Ich gehe.'",
-        answers: ["Präsens", "Präteritum", "Perfekt", "Futur I"],
-        correct: "Präsens"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Ich ging.'",
-        answers: ["Präsens", "Perfekt", "Präteritum", "Futur I"],
-        correct: "Präteritum"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Sie spielt Klavier.'",
-        answers: ["Präsens", "Präteritum", "Perfekt", "Futur I"],
-        correct: "Präsens"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Wir werden lernen.'",
-        answers: ["Perfekt", "Futur I", "Präsens", "Präteritum"],
-        correct: "Futur I"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Er hat geschlafen.'",
-        answers: ["Präsens", "Perfekt", "Präteritum", "Futur I"],
-        correct: "Perfekt"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Ihr lacht.'",
-        answers: ["Präsens", "Perfekt", "Präteritum", "Futur I"],
-        correct: "Präsens"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Du wurdest gelobt.'",
-        answers: ["Präteritum", "Perfekt", "Futur I", "Präsens"],
-        correct: "Präteritum"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Wir haben gespielt.'",
-        answers: ["Perfekt", "Präsens", "Präteritum", "Futur I"],
-        correct: "Perfekt"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Er wird kommen.'",
-        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
-        correct: "Futur I"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Ich male.'",
-        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
-        correct: "Präsens"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Sie gingen nach Hause.'",
-        answers: ["Perfekt", "Präsens", "Futur I", "Präteritum"],
-        correct: "Präteritum"
-      },
-      {
-        question: "Welche Zeitform ist das? 'Wir haben gekocht.'",
-        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
-        correct: "Perfekt"
-      }
+      {question: "Welche Zeitform ist das? 'Ich werde essen.'", answers: ["Präsens","Perfekt","Futur I","Präteritum"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Ich habe gegessen.'", answers: ["Perfekt","Präteritum","Präsens","Futur I"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Ich gehe.'", answers: ["Präsens","Präteritum","Perfekt","Futur I"], correct: "Präsens"},
+      {question: "Welche Zeitform ist das? 'Ich ging.'", answers: ["Präsens","Perfekt","Präteritum","Futur I"], correct: "Präteritum"},
+      {question: "Welche Zeitform ist das? 'Wir werden lernen.'", answers: ["Perfekt","Futur I","Präsens","Präteritum"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Er hat geschlafen.'", answers: ["Präsens","Perfekt","Präteritum","Futur I"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Ihr lacht.'", answers: ["Präsens","Perfekt","Präteritum","Futur I"], correct: "Präsens"},
+      {question: "Welche Zeitform ist das? 'Wir haben gespielt.'", answers: ["Perfekt","Präsens","Präteritum","Futur I"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Er wird kommen.'", answers: ["Präsens","Perfekt","Futur I","Präteritum"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Ich male.'", answers: ["Präsens","Perfekt","Futur I","Präteritum"], correct: "Präsens"},
+      {question: "Welche Zeitform ist das? 'Sie gingen nach Hause.'", answers: ["Perfekt","Präsens","Futur I","Präteritum"], correct: "Präteritum"},
+      {question: "Welche Zeitform ist das? 'Wir haben gekocht.'", answers: ["Präsens","Perfekt","Futur I","Präteritum"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Er spielte Fußball.'", answers: ["Präteritum","Perfekt","Futur I","Präsens"], correct: "Präteritum"},
+      {question: "Welche Zeitform ist das? 'Sie wird tanzen.'", answers: ["Präsens","Futur I","Präteritum","Perfekt"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Ich habe geschrieben.'", answers: ["Perfekt","Präteritum","Präsens","Futur I"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Er fährt.'", answers: ["Präsens","Perfekt","Futur I","Präteritum"], correct: "Präsens"},
+      {question: "Welche Zeitform ist das? 'Wir werden singen.'", answers: ["Futur I","Perfekt","Präteritum","Präsens"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Sie hat gewonnen.'", answers: ["Perfekt","Präsens","Präteritum","Futur I"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Du schreibst.'", answers: ["Präsens","Perfekt","Präteritum","Futur I"], correct: "Präsens"},
+      {question: "Welche Zeitform ist das? 'Er aß.'", answers: ["Präteritum","Präsens","Futur I","Perfekt"], correct: "Präteritum"},
+      {question: "Welche Zeitform ist das? 'Ich werde reisen.'", answers: ["Perfekt","Präsens","Futur I","Präteritum"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Wir liefen.'", answers: ["Präteritum","Perfekt","Präsens","Futur I"], correct: "Präteritum"},
+      {question: "Welche Zeitform ist das? 'Ich habe gesungen.'", answers: ["Perfekt","Präsens","Futur I","Präteritum"], correct: "Perfekt"},
+      {question: "Welche Zeitform ist das? 'Du wirst lachen.'", answers: ["Futur I","Präsens","Präteritum","Perfekt"], correct: "Futur I"},
+      {question: "Welche Zeitform ist das? 'Er schwimmt.'", answers: ["Präsens","Präteritum","Perfekt","Futur I"], correct: "Präsens"}
     ];
 
     let currentQuestion = 0;
