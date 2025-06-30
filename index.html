@@ -39,11 +39,17 @@
       margin-top: 15px;
       font-weight: bold;
     }
+    .score {
+      margin-bottom: 10px;
+      font-size: 0.95em;
+      color: #333;
+    }
   </style>
 </head>
 <body>
   <div class="quiz-container">
     <h2>Quiz: Zeitformen</h2>
+    <div class="score" id="score">Frage 1 von 25 | ✅ 0 | ❌ 0</div>
     <div class="question" id="question">Lade Frage...</div>
     <div id="answers"></div>
     <div id="result"></div>
@@ -79,15 +85,20 @@
     ];
 
     let currentQuestion = 0;
+    let correctCount = 0;
+    let wrongCount = 0;
+
     const questionEl = document.getElementById("question");
     const answersEl = document.getElementById("answers");
     const resultEl = document.getElementById("result");
+    const scoreEl = document.getElementById("score");
 
     function loadQuestion() {
       const q = quizData[currentQuestion];
       questionEl.textContent = q.question;
       answersEl.innerHTML = "";
       resultEl.textContent = "";
+      updateScore();
       q.answers.forEach(answer => {
         const btn = document.createElement("button");
         btn.textContent = answer;
@@ -102,9 +113,11 @@
       if (answer === q.correct) {
         resultEl.textContent = "✅ Richtig!";
         resultEl.style.color = "green";
+        correctCount++;
       } else {
         resultEl.textContent = `❌ Falsch! Richtige Antwort: ${q.correct}`;
         resultEl.style.color = "red";
+        wrongCount++;
       }
       currentQuestion++;
       if (currentQuestion < quizData.length) {
@@ -113,12 +126,17 @@
         setTimeout(() => {
           questionEl.textContent = "Quiz beendet!";
           answersEl.innerHTML = "";
-          resultEl.textContent = "Gut gemacht! 🎉";
+          resultEl.textContent = `✅ Richtig: ${correctCount} | ❌ Falsch: ${wrongCount}`;
         }, 1500);
       }
+    }
+
+    function updateScore() {
+      scoreEl.textContent = `Frage ${currentQuestion + 1} von ${quizData.length} | ✅ ${correctCount} | ❌ ${wrongCount}`;
     }
 
     loadQuestion();
   </script>
 </body>
 </html>
+  
