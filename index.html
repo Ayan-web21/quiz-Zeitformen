@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Zeitformen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+    .quiz-container {
+      background: white;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .answer-btn {
+      display: block;
+      margin: 5px auto;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .answer-btn:hover {
+      background: #45a049;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>Quiz: Zeitformen</h2>
+    <div class="question" id="question">Lade Frage...</div>
+    <div id="answers"></div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Welche Zeitform ist das? 'Ich werde essen.'",
+        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
+        correct: "Futur I"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Ich habe gegessen.'",
+        answers: ["Perfekt", "Präteritum", "Präsens", "Futur I"],
+        correct: "Perfekt"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Ich gehe.'",
+        answers: ["Präsens", "Präteritum", "Perfekt", "Futur I"],
+        correct: "Präsens"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Ich ging.'",
+        answers: ["Präsens", "Perfekt", "Präteritum", "Futur I"],
+        correct: "Präteritum"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Sie spielt Klavier.'",
+        answers: ["Präsens", "Präteritum", "Perfekt", "Futur I"],
+        correct: "Präsens"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Wir werden lernen.'",
+        answers: ["Perfekt", "Futur I", "Präsens", "Präteritum"],
+        correct: "Futur I"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Er hat geschlafen.'",
+        answers: ["Präsens", "Perfekt", "Präteritum", "Futur I"],
+        correct: "Perfekt"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Ihr lacht.'",
+        answers: ["Präsens", "Perfekt", "Präteritum", "Futur I"],
+        correct: "Präsens"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Du wurdest gelobt.'",
+        answers: ["Präteritum", "Perfekt", "Futur I", "Präsens"],
+        correct: "Präteritum"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Wir haben gespielt.'",
+        answers: ["Perfekt", "Präsens", "Präteritum", "Futur I"],
+        correct: "Perfekt"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Er wird kommen.'",
+        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
+        correct: "Futur I"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Ich male.'",
+        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
+        correct: "Präsens"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Sie gingen nach Hause.'",
+        answers: ["Perfekt", "Präsens", "Futur I", "Präteritum"],
+        correct: "Präteritum"
+      },
+      {
+        question: "Welche Zeitform ist das? 'Wir haben gekocht.'",
+        answers: ["Präsens", "Perfekt", "Futur I", "Präteritum"],
+        correct: "Perfekt"
+      }
+    ];
+
+    let currentQuestion = 0;
+    const questionEl = document.getElementById("question");
+    const answersEl = document.getElementById("answers");
+    const resultEl = document.getElementById("result");
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionEl.textContent = q.question;
+      answersEl.innerHTML = "";
+      resultEl.textContent = "";
+      q.answers.forEach(answer => {
+        const btn = document.createElement("button");
+        btn.textContent = answer;
+        btn.className = "answer-btn";
+        btn.onclick = () => checkAnswer(answer);
+        answersEl.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(answer) {
+      const q = quizData[currentQuestion];
+      if (answer === q.correct) {
+        resultEl.textContent = "✅ Richtig!";
+        resultEl.style.color = "green";
+      } else {
+        resultEl.textContent = `❌ Falsch! Richtige Antwort: ${q.correct}`;
+        resultEl.style.color = "red";
+      }
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        setTimeout(loadQuestion, 1500);
+      } else {
+        setTimeout(() => {
+          questionEl.textContent = "Quiz beendet!";
+          answersEl.innerHTML = "";
+          resultEl.textContent = "Gut gemacht! 🎉";
+        }, 1500);
+      }
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
